@@ -21,43 +21,64 @@
 
     <section class="form">
         <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto reiciendis dolores debitis beatae ea, eaque, recusandae accusamus perspiciatis nemo sit delectus aut laborum asperiores corrupti deleniti, ab reprehenderit consectetur dicta?</p>
+            <p class="lore">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto reiciendis dolores debitis beatae ea, eaque, recusandae accusamus perspiciatis nemo sit delectus aut laborum asperiores corrupti deleniti, ab reprehenderit consectetur dicta?</p>
+            <p class="lore">Lorem ipsum dolor ab reprehenderit consectetur dicta?</p>
         </div>
 
         <form action="">
-            <legend>Sign Up Now!</legend>
-            <div class="columnone">
-                <ul>
-                    <li>
-                        <label for=""></label>
-                        <input type="text"></li>
-                    <li>
-                        <label for=""></label>
-                        <input type="email"></li>
-                    <li>
-                        <label for=""></label>
-                        <input type="password"></li>
-                </ul>
-            </div>
-            <div class="columntwo">
-                <ul>
-                    <li>
-                        <label for=""></label>
-                        <input type="text"></li>
-                    <li>
-                        <label for=""></label>
-                        <input type="tel"></li>
-                    <li>
-                        <label for=""></label>
-                        <input type="password"></li>
-                </ul>
+            <div class="formnobutton">
+                <legend>Sign Up Now!</legend>
+                <div class="forms">
+                    <div class="columnone">
+                        <ul>
+                            <li>
+                                <label for="first">FIRST NAME</label>
+                                <input type="text" id="first" name="first" placeholder=" " required>
+                            </li>
+                            <li>
+                                <label for="mail">EMAIL</label>
+                                <input type="email" id="mail" name="mail" placeholder=" " required>
+                            </li>
+                            <li>
+                                <label for="pwd">PASSWORD</label>
+                                <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder=" " required>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="columntwo">
+                        <ul>
+                            <li>
+                                <label for="lname">LAST NAME</label>
+                                <input type="text" id="lname" name="lname" placeholder=" " required>
+                            </li>
+                            <li>
+                                <label for="num">PHONE NUMBER</label>
+                                <input type="tel" id="num" name="num" pattern="[0-9]{10}" placeholder=" " title="Please input exactly 10 digits (e.g. 0412345678" required>
+                            </li>
+                            <li>
+                                <label for="cwd">CONFIRM PASSWORD</label>
+                                <input type="password" id="cwd" name="cwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder=" " oninput="check(this)" required>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="accountbutton">
-                <button input="button"></button>
+                <button input="button">Create Account</button>
                 <p>Already have an account? <span>Log in</span></p>
             </div>
         </form>
     </section>
+    <script language='javascript' type='text/javascript'>
+        function check(input) {
+            if (document.getElementById('cwd').value != document.getElementById('pwd').value) {
+                input.setCustomValidity('Password Must be Matching.');
+            } else {
+                // input is valid -- reset the error message
+                input.setCustomValidity('');
+            }
+        }
+    </script>
 </body>
 </html>
