@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.image {
+    width: 35vw;
+    height: 100vh;
+    background-color: lightblue;
+}
+
+.form {
+    width: 65vw;
+    height: 100vh;
+    background-color: rgb(212, 211, 211);
+}
